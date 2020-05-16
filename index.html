@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>MetaBettor: Make Better Bets</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,45 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>MetaBettor</h1>
+      <div id="unauthenticated">
+        <div id="message"></div>
+        <form id="sign-up">
+             <input name="credentials[email]" type="text" placeholder="Email">
+             <input name="credentials[password]" type="password" placeholder="Password">
+             <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
+             <button type="submit">Sign Up</button>
+            </form>
+        <form id="sign-in">
+                <input required type="text" placeholder="Email" name="credentials[email]">
+                <input required type="password" placeholder="Password" name="credentials[password]">
+                <button type="submit">Sign In</button>
+              </form>
+        </div>
+      <div class="authenticated user-settings">
+        <form id="change-password">
+              <input required type="password" name="passwords[old]" placeholder="Old Password">
+              <input required type="password" name="passwords[new]" placeholder="New Password">
+                <button type="submit">Change Password</button>
+        </form>
+        <form id="sign-out">
+            <input type="submit" value="Sign Out">
+        </form>
+      </div>
+      <div class="authenticated bet-menu">
+        <div>New Bet Information</div>
+          <form id="make-bet">
+              <input required type="date" name="bet[date]" placeholder="Bet Date">
+              <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
+              <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
+              <input required type="text" name="bet[bet_result]" placeholder="Bet Result">
+            <button type="submit">Add New Bet</button>
+            </form>
+            <div id="bet-message"></div>
+        <form id="get-bets">
+            <button type="submit">View All Bets</button>
+        </form>
+        <div class="bet-index"></div>
+      </div>
     </body>
 </html>
