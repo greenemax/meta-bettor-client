@@ -17,7 +17,35 @@ const onGetBets = function (event) {
     .catch(ui.getBetsFailure)
 }
 
+const onFindBet = function (event) {
+  event.preventDefault()
+  const betId = getFormFields(event.target)
+  // console.log(betId)
+  api.findBet(betId)
+    .then(ui.findBetSuccess)
+    .catch(ui.findBetFailure)
+}
+
+const onRemoveBet = function (event) {
+  event.preventDefault()
+  const betId = getFormFields(event.target)
+  api.removeBet(betId)
+    .then(ui.removeBetSuccess)
+    .catch(ui.removeBetFailure)
+}
+
+const onUpdateBet = function (event) {
+  event.preventDefault()
+  const betUpdate = getFormFields(event.target)
+  api.updateBet(betUpdate)
+    .then(ui.updateBetSuccess)
+    .catch(ui.updateBetFailure)
+}
+
 module.exports = {
   onMakeBet,
-  onGetBets
+  onGetBets,
+  onFindBet,
+  onRemoveBet,
+  onUpdateBet
 }

@@ -1,14 +1,16 @@
-<h3>Bets</h3>
 {{#each bets as |bet|}}
+<b>Bet {{bet._id}}</b>
   {{! this is a comment that will stop handlebars expressions (javascripty things) from running }}
   {{!-- this is also a comment --}}
   {{!-- {{log bet}} --}}
-  <section data-id="{{bet.id}}" class="bet-index">
+    {{log bet}}
+<section data-id="{{bet._id}}" class="bet-content">
       <div>
     Date: {{ bet.date }}
     Bet Amount: {{bet.bet_amount}}
     Bet Description: {{bet.bet_description}}
     Bet Result: {{bet.bet_result}}
+    {{> remove-btn id=bet._id}}
     </div>
   </section>
 

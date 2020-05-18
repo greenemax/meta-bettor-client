@@ -38,19 +38,35 @@
         </form>
       </div>
       <div class="authenticated bet-menu">
-        <div>New Bet Information</div>
+        <div>Bet Information</div>
           <form id="make-bet">
               <input required type="date" name="bet[date]" placeholder="Bet Date">
               <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
               <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
               <input required type="text" name="bet[bet_result]" placeholder="Bet Result">
-            <button type="submit">Add New Bet</button>
+            <button type="submit">Add Bet</button>
             </form>
+            <form id="update-bet">
+                <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
+                <input required type="date" name="bet[date]" placeholder="Bet Date">
+                <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
+                <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
+                <input required type="text" name="bet[bet_result]" placeholder="Bet Result">
+              <button type="submit">Update Bet</button>
+              </form>
             <div id="bet-message"></div>
+        <form id="find-bet">
+            <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
+            <button type="submit">Find Bet</button>
+        </form>
+        <form id="remove-bet">
+            <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
+            <button type="submit">Remove Bet</button>
+        </form>
         <form id="get-bets">
             <button type="submit">View All Bets</button>
         </form>
-        <div class="bet-index"></div>
+        <div class="bet-index bet-content"></div>
       </div>
     </body>
 </html>
