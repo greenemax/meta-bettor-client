@@ -43,7 +43,12 @@
               <input required type="date" name="bet[date]" placeholder="Bet Date">
               <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
               <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
-              <input required type="text" name="bet[bet_result]" placeholder="Bet Result">
+              <select name="bet[bet_result]" >
+                <option value="TBD">TBD</option>
+                <option value="Win">Win</option>
+                <option value="Loss">Loss</option>
+                <option value="Push">Push</option>
+              </select>
             <button type="submit">Add Bet</button>
             </form>
             <form id="update-bet">
@@ -51,7 +56,12 @@
                 <input required type="date" name="bet[date]" placeholder="Bet Date">
                 <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
                 <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
-                <input required type="text" name="bet[bet_result]" placeholder="Bet Result">
+                <select name="bet[bet_result]" >
+                  <option value="TBD">TBD</option>
+                  <option value="Win">Win</option>
+                  <option value="Loss">Loss</option>
+                  <option value="Push">Push</option>
+                </select>
               <button type="submit">Update Bet</button>
               </form>
             <div id="bet-message"></div>
@@ -62,9 +72,10 @@
         <form id="remove-bet">
             <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
             <button type="submit">Remove Bet</button>
+
         </form>
         <form id="get-bets">
-            <button type="submit">View All Bets</button>
+            <button type="submit">View Bets</button>
         </form>
         <div class="bet-index bet-content"></div>
       </div>

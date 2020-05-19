@@ -42,10 +42,15 @@ const onUpdateBet = function (event) {
     .catch(ui.updateBetFailure)
 }
 
+const addHandlers = () => {
+  $('#bet-content').on('click', '.remove-bet', onRemoveBet)
+}
+
 module.exports = {
   onMakeBet,
   onGetBets,
   onFindBet,
   onRemoveBet,
-  onUpdateBet
+  onUpdateBet,
+  addHandlers
 }

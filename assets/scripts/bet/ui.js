@@ -1,4 +1,6 @@
 'use strict'
+const store = require('../store')
+
 const showBetsTemplate = require('../templates/bet-display.handlebars')
 
 const makeBetSuccess = data => {
@@ -12,14 +14,14 @@ const makeBetFailure = error => {
 }
 
 const getBetsSuccess = data => {
-  // console.log(data)
-  const showBetsHtml = showBetsTemplate({ bets: data.bets })
-  // console.log(showBetsHtml)
+  // exmple from mdn const result = words.filter(word => word.length > 6);
+  const result = data.bets.filter(bet => bet.gambler_id === store.user._id)
+  const showBetsHtml = showBetsTemplate({ bets: result })
   $('.bet-content').html(showBetsHtml)
 }
 
 const getBetsFailure = error => {
-  $('.bet-content').text('Sorry! Request failed.').css('color', 'red')
+  $('.bet-content').text('Sorry! Request failed due to ' + error).css('color', 'red')
   console.error(error)
 }
 
@@ -47,7 +49,7 @@ const removeBetFailure = error => {
 
 const updateBetSuccess = data => {
   const betId = data
-  // $('.bet-content').text('Bet successfully updated')
+  $('.bet-content').text('Bet successfully updated')
 }
 
 const updateBetFailure = error => {

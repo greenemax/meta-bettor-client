@@ -24,15 +24,18 @@ const updateBet = function (data) {
   })
 }
 
-const getBets = () => {
+const getBets = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/bets'
+    url: config.apiUrl + `/bets`,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 const findBet = function (data) {
   const betId = data.bet.bet_id
-  console.log(betId)
   return $.ajax({
     url: config.apiUrl + `/bets/` + betId,
     method: 'GET',

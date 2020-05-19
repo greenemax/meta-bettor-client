@@ -11,6 +11,7 @@ $(() => {
   $('#make-bet').on('submit', betEvents.onMakeBet)
   $('#update-bet').on('submit', betEvents.onUpdateBet)
   $('#find-bet').on('submit', betEvents.onFindBet)
+  $('.remove-bet').on('submit', betEvents.onRemoveBet)
   $('#remove-bet').on('submit', betEvents.onRemoveBet)
   $('#get-bets').on('submit', betEvents.onGetBets)
   $('#sign-up').on('submit', authEvents.onSignUp)
