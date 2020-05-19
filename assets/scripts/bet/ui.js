@@ -29,10 +29,11 @@ const findBetSuccess = data => {
   $('.bet-content').html(``)
   // console.log(data)
   const betId = data
-  console.log(betId)
+  //console.log(betId)
   const showBetHtml = showBetsTemplate({ bets: betId })
-  console.log(showBetHtml)
+  //console.log(showBetHtml)
   $('.bet-content').html(showBetHtml)
+  $('.remove-bet').on('click', betEvents.onRemoveBet)
 }
 
 const findBetFailure = error => {

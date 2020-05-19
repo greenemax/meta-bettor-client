@@ -46,7 +46,8 @@ const findBet = function (data) {
 }
 
 const removeBet = function (data) {
-  const betId = data.bet.bet_id
+  console.log(data)
+  const betId = data
   console.log(betId)
   return $.ajax({
     url: config.apiUrl + `/bets/` + betId,

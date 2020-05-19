@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const betEvents = require('./../bet/events')
 
 const onMakeBet = function (event) {
   event.preventDefault()
@@ -14,6 +15,15 @@ const onGetBets = function (event) {
   event.preventDefault()
   api.getBets()
     .then(ui.getBetsSuccess)
+    // .then((data) => {
+    //   // $('.remove-bet').on('click', betEvents.onRemoveBet)
+    //   $('.remove-bet').each(i => {
+    //     const bet = $('.remove-bet')[i]
+    //     console.log(bet.data('id'))
+    //     bet.click(() => alert('Anything'))
+    //   })
+    //   return data
+    // })
     .catch(ui.getBetsFailure)
 }
 
@@ -26,31 +36,35 @@ const onFindBet = function (event) {
     .catch(ui.findBetFailure)
 }
 
-const onRemoveBet = function (event) {
-  event.preventDefault()
-  const betId = getFormFields(event.target)
-  api.removeBet(betId)
-    .then(ui.removeBetSuccess)
-    .catch(ui.removeBetFailure)
-}
-
 const onUpdateBet = function (event) {
   event.preventDefault()
   const betUpdate = getFormFields(event.target)
   api.updateBet(betUpdate)
-    .then(ui.updateBetSuccess)
+    .then(function () {
+      onGetBets(event)
+    })
     .catch(ui.updateBetFailure)
 }
 
-const addHandlers = () => {
-  $('#bet-content').on('click', '.remove-bet', onRemoveBet)
+const onRemoveBet = function (event) {
+  event.preventDefault()
+  console.log('works')
+  const betId = $(event.target).data('id')
+  console.log(betId)
+  api.removeBet(betId)
+    .then(function () {
+      onGetBets(event)
+    })
+    .catch(ui.removeBetFailure)
 }
 
+const addHandlers = () => {
+
+}
 module.exports = {
   onMakeBet,
   onGetBets,
   onFindBet,
   onRemoveBet,
-  onUpdateBet,
-  addHandlers
+  onUpdateBet
 }
