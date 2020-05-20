@@ -29,9 +29,9 @@ const findBetSuccess = data => {
   $('.bet-content').html(``)
   // console.log(data)
   const betId = data
-  //console.log(betId)
+  // console.log(betId)
   const showBetHtml = showBetsTemplate({ bets: betId })
-  //console.log(showBetHtml)
+  // console.log(showBetHtml)
   $('.bet-content').html(showBetHtml)
 }
 
@@ -48,7 +48,6 @@ const removeBetFailure = error => {
 }
 
 const updateBetSuccess = data => {
-  const betId = data
   $('.bet-content').text('Bet successfully updated')
 }
 
