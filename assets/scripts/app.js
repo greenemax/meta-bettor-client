@@ -8,7 +8,6 @@
 const authEvents = require('./auth/events')
 const betEvents = require('./bet/events')
 $(() => {
-  console.log($('.remove-bet'))
   $('#make-bet').on('submit', betEvents.onMakeBet)
   $('#update-bet').on('submit', betEvents.onUpdateBet)
   $('#find-bet').on('submit', betEvents.onFindBet)

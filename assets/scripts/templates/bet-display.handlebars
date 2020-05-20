@@ -1,10 +1,11 @@
 {{#each bets as |bet|}}
-<b>Bet {{bet._id}}</b>
+
   {{! this is a comment that will stop handlebars expressions (javascripty things) from running }}
   {{!-- this is also a comment --}}
   {{!-- {{log bet}} --}}
     {{log bet}}
-<section data-id="{{bet._id}}" class="bet-content">
+<section data-id="{{bet._id}}" class="bet-content bets">
+  <label>Bet {{bet._id}}</label>
       <div>
     Date: {{ bet.date }}
     Bet Amount: {{bet.bet_amount}}

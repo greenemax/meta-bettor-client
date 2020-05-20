@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+    </style>
       <title>MetaBettor: Make Better Bets</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -13,15 +15,15 @@
     </head>
     <body>
       <h1>MetaBettor</h1>
-      <section class="auth-section">
-      <div id="unauthenticated">
-        <div id="message"></div>
-        <form id="sign-up">
+        <section class="auth-section">
+          <div id="unauthenticated">
+          <div id="message"></div>
+          <form id="sign-up">
              <input name="credentials[email]" type="text" placeholder="Email">
              <input name="credentials[password]" type="password" placeholder="Password">
              <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
              <button type="submit">Sign Up</button>
-            </form>
+          </form>
         <form id="sign-in">
                 <input required type="text" placeholder="Email" name="credentials[email]">
                 <input required type="password" placeholder="Password" name="credentials[password]">
@@ -39,9 +41,12 @@
         </form>
       </div>
     </section>
+
     <section class="bet-section">
       <div class="authenticated bet-menu">
-        <div>Bet Information</div>
+        <h3>Bet Menu</h3>
+        <div id="bet-message"></div>
+        <div>Add New Bet</div>
           <form id="make-bet">
               <input required type="date" name="bet[date]" placeholder="Bet Date">
               <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
@@ -54,33 +59,33 @@
               </select>
             <button type="submit">Add Bet</button>
             </form>
+            <div>Update Bet</div>
             <form id="update-bet">
                 <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
                 <input required type="date" name="bet[date]" placeholder="Bet Date">
                 <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
                 <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
+
                 <select name="bet[bet_result]" >
                   <option value="TBD">TBD</option>
                   <option value="Win">Win</option>
                   <option value="Loss">Loss</option>
                   <option value="Push">Push</option>
                 </select>
+
               <button type="submit">Update Bet</button>
               </form>
             <div id="bet-message"></div>
+            <div>Find A Bet</div>
         <form id="find-bet">
             <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
             <button type="submit">Find Bet</button>
         </form>
-        <!-- <form id="remove-bet">
-            <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
-            <button type="submit">Remove Bet</button> -->
-
-        </form>
+        <div>View Your Bets</div>
         <form id="get-bets">
-            <button type="submit">View Bets</button>
+            <button type="submit">View Your Bets</button>
         </form>
-        <div class="bet-index bet-content"></div>
+        <div class="bet-index bet-cover bet-content"></div>
       </div>
     </section>
     </body>

@@ -30,7 +30,6 @@ const onGetBets = function (event) {
 const onFindBet = function (event) {
   event.preventDefault()
   const betId = getFormFields(event.target)
-  // console.log(betId)
   api.findBet(betId)
     .then(ui.findBetSuccess)
     .catch(ui.findBetFailure)
@@ -48,9 +47,7 @@ const onUpdateBet = function (event) {
 
 const onRemoveBet = function (event) {
   event.preventDefault()
-  console.log('works')
   const betId = $(event.target).data('id')
-  console.log(betId)
   api.removeBet(betId)
     .then(function () {
       onGetBets(event)
