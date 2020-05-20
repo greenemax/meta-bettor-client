@@ -1,9 +1,18 @@
+@font-face {
+  font-family: 'Neue Haas';
+  src: url('public/neue-haas) format('truetype');
+}
+
+.element-with-custom-font {
+  ;
+}
+
 body {
   background-color: #85bb65;
   color: white;
   min-height: 100vh;
   padding: 5rem 1rem 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Neue Haas', sans-serif;
 }
 
 .bet-cover {
