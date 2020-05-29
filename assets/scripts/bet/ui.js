@@ -31,6 +31,7 @@ const findBetSuccess = data => {
   const betId = data
   const showBetHtml = showBetsTemplate({ bets: betId })
   $('.bet-content').html(showBetHtml)
+  $('#bet-message').text('Bet displayed below')
 }
 
 const findBetFailure = error => {
