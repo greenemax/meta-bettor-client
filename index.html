@@ -62,17 +62,14 @@
                 <input required type="date" name="bet[date]" placeholder="Bet Date">
                 <input required type="text" name="bet[bet_amount]" placeholder="Bet Amount">
                 <input required type="text" name="bet[bet_description]" placeholder="Bet Details">
-
                 <select name="bet[bet_result]" >
                   <option value="TBD">TBD</option>
                   <option value="Win">Win</option>
                   <option value="Loss">Loss</option>
                   <option value="Push">Push</option>
                 </select>
-
               <button type="submit">Update Bet</button>
               </form>
-            <div id="bet-message"></div>
             <div>Find A Bet</div>
         <form id="find-bet">
             <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
@@ -82,6 +79,7 @@
         <form id="get-bets">
             <button type="submit">View Your Bets</button>
         </form>
+        <div class="bets-made"></div>
         <div class="bet-index bet-cover bet-content"></div>
       </div>
     </section>

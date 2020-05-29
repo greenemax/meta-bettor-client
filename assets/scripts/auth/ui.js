@@ -16,7 +16,6 @@ const signUpFailure = function (error) {
   $('#message').text('Sign up failed!')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log(error)
   // reset form:
   $('form').trigger('reset')
 }
@@ -36,7 +35,6 @@ const signInFailure = function (error) {
   $('#message').text('Sign in failed!')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log(error)
   // reset form:
   $('form').trigger('reset')
 }
@@ -53,7 +51,6 @@ const changePasswordFailure = function (error) {
   $('#message').text('Change password failed!')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log(error)
   // reset form:
   $('form').trigger('reset')
 }
@@ -68,6 +65,7 @@ const signOutSuccess = function () {
   $('.authenticated').hide()
   $('#unauthenticated').show()
   $('.bet-index').html(``)
+  $('.bets-made').html(``)
   // clear out the user from the store object
   // set `user` to be `null`
   store.user = null
@@ -77,8 +75,6 @@ const signOutFailure = function (error) {
   $('#message').text('Error on sign out')
   $('#message').removeClass()
   $('#message').addClass('failure')
-
-  console.log(error)
 }
 
 module.exports = {

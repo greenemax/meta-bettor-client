@@ -18,20 +18,18 @@ const getBetsSuccess = data => {
   const result = data.bets.filter(bet => bet.gambler_id === store.user._id)
   const showBetsHtml = showBetsTemplate({ bets: result })
   $('.bet-content').html(showBetsHtml)
+  const betsMade = result.length
+  $('.bets-made').html(`<div>You have made ${betsMade} bet(s)!</div>`)
 }
 
 const getBetsFailure = error => {
   $('.bet-content').text('Sorry! Request failed due to ' + error).css('color', 'red')
-  console.error(error)
 }
 
 const findBetSuccess = data => {
   $('.bet-content').html(``)
-  // console.log(data)
   const betId = data
-  // console.log(betId)
   const showBetHtml = showBetsTemplate({ bets: betId })
-  // console.log(showBetHtml)
   $('.bet-content').html(showBetHtml)
 }
 
