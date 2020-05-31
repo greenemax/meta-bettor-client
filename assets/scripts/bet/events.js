@@ -29,9 +29,7 @@ const onUpdateBet = function (event) {
   event.preventDefault()
   const betUpdate = getFormFields(event.target)
   api.updateBet(betUpdate)
-    .then(function () {
-      onGetBets(event)
-    })
+    .then(ui.updateBetSuccess)
     .catch(ui.updateBetFailure)
 }
 
@@ -39,9 +37,7 @@ const onRemoveBet = function (event) {
   event.preventDefault()
   const betId = $(event.target).data('id')
   api.removeBet(betId)
-    .then(function () {
-      onGetBets(event)
-    })
+    .then(ui.removeBetSuccess)
     .catch(ui.removeBetFailure)
 }
 

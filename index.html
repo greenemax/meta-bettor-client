@@ -42,7 +42,7 @@
     <section class="bet-section">
       <div class="authenticated bet-menu">
         <h3>Bet Menu</h3>
-        <div id="bet-message"></div>
+        <div class="bet-message"></div>
         <div>Add New Bet</div>
           <form id="make-bet">
               <input required type="date" name="bet[date]" placeholder="Bet Date">
@@ -56,6 +56,8 @@
               </select>
             <button type="submit">Add Bet</button>
             </form>
+
+            <div id="bet-update-confirm"></div>
             <div>Update Bet</div>
             <form id="update-bet">
                 <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
@@ -70,14 +72,14 @@
                 </select>
               <button type="submit">Update Bet</button>
               </form>
-            <div>Find A Bet</div>
-        <form id="find-bet">
+
+          <div>Find A Bet</div>
+          <form id="find-bet">
             <input required type="text" name="bet[bet_id]" placeholder="Bet ID">
-            <button type="submit">Find Bet</button>
+            <button type="submit">Find A Bet</button>
         </form>
-        <div>View Your Bets</div>
         <form id="get-bets">
-            <button type="submit">View Your Bets</button>
+            <button type="submit">View All Bets</button>
         </form>
         <div class="bets-made"></div>
         <div class="bet-index bet-cover bet-content"></div>
